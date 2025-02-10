@@ -1,128 +1,28 @@
-<HTML>
-    <HEAD>
-        <script>
-            alert("Hi!")
-            let doIt=()=>{
-                x=document.getElementById("bw").value;
-                alert (x);
-                alert("done");
+<p>Please enter your baggage weight:</p>
+<input type="text" id="bw" width="6">
+<button onclick="doIt()">Submit</button>
 
-            }
-            //Example function which takes parameters and returns something:
-            let power= (base,exp) =>
-            {
-                let res=1;
-                while (exp>0){
-                    res*=base;
-                    exp-=1;
-                }
-                return res;
-            }
-            let v=power(4,3);
-            alert (v);
-
-            let mapNums=()=>{
-                let s=document.getElementById("nums").value;
-                s.split(" ").map(x=>parseInt(x)).map(x=>x*x).forEach(element => {
-                    alert(element);
-                });
-            }
-            let mapNums1=()=>{
-                let s=document.getElementById("nums").value;
-                strArray=s.split(" ")
-                nArray=[]
-                for(let i=0; i<strArray.length;i++){
-                    nArray.push(parseInt(strArray[i]));
-                }
-                squares=[]
-                for(let i=0; i<nArray.length;i++){
-                    squares.push(nArray[i]*nArray[i]);
-                }
-                for(let i=0; i<squares.length;i++){
-                    alert(squares[i]);
-                }
-            }
-            //sample invocations
-//            alert(f3(3,5,1000)) //should return 233168
-//            alert(f4(3,5,[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,15,16,16,17,17,20]))
-//            95
-//            alert(f5([3,5],[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,15,16,16,17,17,20]))
-//            as above
-//            alert(f6([2,3,5],[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,15,16,16,17,17,20]))
-//            155
-//            alert(f7({milk:2,bread:1},{bread:1.99,cheese:2.99,milk:1.29}))
-//            4.57
+<script>
+    function doIt() {
+        let x = document.getElementById("bw").value;
+        if (x > 15) {
+            alert("Your baggage is overweight!");
+        } else {
+            alert("Your baggage is within the weight limit.");
+        }
+    }
 </script>
 
-    </HEAD>
-    <body>
-        <p>This is body text</p>
-        <p>Hello World!</p>
-        <h1>For each function, write the function and then the logic to call it.</h1>
+<p>Exercise 2:</p>
+<button onclick="doIt()">Press me!</button>
 
-        <p>Exercise 1:</p>
-        <p>Create a page with a button and input. This should prompt the user for their baggage weight</p>
-        <p>When the user clicks submit, </p>
-        <p>If the weight is over the limit of 15kg, it should alert the user that the bag is overweight.</p>
-        <p>The prompt: <input type="text" id="bw", width="6"><button onclick="doIt()">The button text (submit maybe?)</button></p>
-
-
-        <p>Exercise 2:</p>
-        <p>Create a page with a button</p>
-        <p>When the user clicks, </p>
-        <p>
-            <p>If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9.
-                 The sum of these multiples is 23.</p>
-            <p>Find the sum of all the multiples of 3 or 5 below 1000 and alert the user to the correct answer.</p>
-</p>
-        <p>The prompt: <button onclick="doIt()">Press me!</button></p>
-
-
-        <p>Exercise 3, Functions:</p>
-        <p>Create a page with a button and three input boxes, labelled a, b and n</p>
-        <p>When the user clicks, </p>
-        <p>
-            <p>Create a function to return the sum of all the multiples of a or b below n</p>
-            <p>Call the function and alert the user to the correct answer when they press the button.</p>
-</p>
-        <p>The prompt: <button onclick="doIt()">Press me!</button></p>
-
-
-
-        <p>Exercise 4, Arrays: f4 should take 2 integer and 1 array parameters and return an integer.</p>
-        <p>Create a page with a button and three input boxes, labelled a, b and l, l should be a large input</p>
-        <p>Create a function f4 to return the sum of all the multiples of a or b in l</p>
-        <p>Call the function f4 in the function called by onClick, and alert the user to the 
-            returned answer when they press the button.</p>        
-            
-        <p>Exercise 5, Arrays: f5 should take array parameters and return an integer.</p>
-        <p>Create a page with a button and two wide input boxes, labelled a and l</p>
-        <p>Create a function f5 to return the sum of all the multiples of factors in a 
-            found in in l (a and l should be arrays of integers, a is of length 2)</p>
-        <p>Call the function f5 in the function called by onClick, and alert the user to the 
-            returned answer when they press the button.</p>
-        </p>
-        <p>You may find the split function useful for creating arrays from the strings entered: <a href="https://www.w3schools.com/jsref/jsref_split.asp">Split</a></p>
-
-        <p>Exercise 6, Arrays: f6 should take array parameters and return an integer.</p>
-        <p>Create a page with a button and two wide input boxes, labelled a and l</p>
-        <p>Create a function f6 to return the sum of all the multiples of factors in a 
-            found in in l (a and l should be arrays of integers)</p>
-        <p>Call the function f6 in the function called by onClick, and alert the user to the 
-            returned answer when they press the button.</p>
-        </p>
-        <p>You may find the split function useful for creating arrays from the strings entered: <a href="https://www.w3schools.com/jsref/jsref_split.asp">Split</a></p>
-
-        <input type="text" id="nums"> <button onclick="mapNums()">Press me!</button>
-
-        <p>Exercise 7, Objects as dictionaries/hashtables:</p>
-        <p>Create a function, f7, that takes two parameters, basket and prices</p>
-        <p>f7 should compute the cost of the basket given the prices supplied.</p>
-        <p>basket should be an object holding product:quantity (string:int) pairs</p>
-        <p>prices should be an object holding product:price (string:float) pairs</p>
-
-        <p>====</p>
-        <p>Create a testing page for the function f7</p>
-
-</body>
-</HTML>
+<script>
+    function doIt() {
+        let sum = 0;
+        for (let i = 0; i < 1000; i++) {
+            if (i % 3 === 0 || i % 5 === 0) {
+                sum += i;
+            }
+        }
+        alert("The sum of multiples of 3 or 5 below 1000 is: " + sum);
+    }
